@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Projects/ML%20projects/Mlops/mlruns/319591550181552183/df151b919f7a4aa6b14816edf4782f83/artifacts
+end_time: 1742912763762
+entry_point_name: ''
+experiment_id: '319591550181552183'
+lifecycle_stage: active
+run_id: df151b919f7a4aa6b14816edf4782f83
+run_name: calm-horse-20
+run_uuid: df151b919f7a4aa6b14816edf4782f83
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742912763331
+status: 4
+tags: []
+user_id: Parthiban

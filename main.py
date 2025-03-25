@@ -59,8 +59,8 @@ def train_with_mlflow():
         trainer.train_model(x_train,y_train)
         trainer.save_model("Model training Completed Successfully")
 
-        predictor = predictor()
-        x_test , y_test = predictor.feature_taerget_separatir(test_data)
+        predictor = Predictor()
+        x_test , y_test = predictor.feature_target_separator(test_data)
         accuracy , class_report , roc_auc_score = predictor.evaluate_model(x_test,y_test)
         report = classification_report(y_test,trainer.pipeline.predict(x_test),output_dict=True)
         logging.info("Model Evaluation completed Successfully")

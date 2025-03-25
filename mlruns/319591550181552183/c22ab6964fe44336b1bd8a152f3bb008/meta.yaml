@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Projects/ML%20projects/Mlops/mlruns/319591550181552183/c22ab6964fe44336b1bd8a152f3bb008/artifacts
+end_time: 1742912682729
+entry_point_name: ''
+experiment_id: '319591550181552183'
+lifecycle_stage: active
+run_id: c22ab6964fe44336b1bd8a152f3bb008
+run_name: industrious-ram-23
+run_uuid: c22ab6964fe44336b1bd8a152f3bb008
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742912682283
+status: 4
+tags: []
+user_id: Parthiban

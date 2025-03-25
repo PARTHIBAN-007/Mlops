@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Projects/ML%20projects/Mlops/mlruns/319591550181552183/949e5a146bc046c099bfbc811cab16a1/artifacts
+end_time: 1742912507984
+entry_point_name: ''
+experiment_id: '319591550181552183'
+lifecycle_stage: active
+run_id: 949e5a146bc046c099bfbc811cab16a1
+run_name: unleashed-yak-595
+run_uuid: 949e5a146bc046c099bfbc811cab16a1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742912507594
+status: 4
+tags: []
+user_id: Parthiban

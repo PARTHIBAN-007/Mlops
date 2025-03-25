@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Projects/ML%20projects/Mlops/mlruns/319591550181552183/762ed1fff7db4ac3bdf22fddfafabb42/artifacts
+end_time: 1742912799222
+entry_point_name: ''
+experiment_id: '319591550181552183'
+lifecycle_stage: active
+run_id: 762ed1fff7db4ac3bdf22fddfafabb42
+run_name: valuable-ray-946
+run_uuid: 762ed1fff7db4ac3bdf22fddfafabb42
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742912798783
+status: 4
+tags: []
+user_id: Parthiban

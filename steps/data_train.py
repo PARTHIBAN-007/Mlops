@@ -4,27 +4,29 @@ import yaml
 from sklearn.preprocessing import StandardScaler , OneHotEncoder ,MinMaxScaler
 from sklearn.compose import ColumnTransformer
 from imblearn.over_sampling import SMOTE
-from imblearn.pipeline import pipeline
+from imblearn.pipeline import Pipeline
 from sklearn.ensemble import RandomForestClassifier , GradientBoostingClassifier
 from sklearn.tree import DecisionTreeClassifier
 
 
 class Trainer:
     def __init__(self):
-        self.config = self.load_confi()
+        self.config = self.load_config()
         self.model_name = self.config['model']['name']
         self.model_params = self.config['model']['params']
+        self.model_path = self.config['model']['store_path']
+
         self.pipeline = self.create_pipeline()
 
     def load_config(self):
-        with open('config.yaml','r') as config_file:
+        with open('config.yml','r') as config_file:
             return yaml.safe_load(config_file)
         
     def create_pipeline(self):
         preprocessor = ColumnTransformer(
             transformers=[
                 ("minmax",MinMaxScaler(),['AnnualPremium']),
-                ('standardize',StandardScaler(),['Age',['RegionID']]),
+                ('standardize',StandardScaler(),['Age','RegionID']),
                 ('onehot',OneHotEncoder(handle_unknown="ignore"),['Gender','PastAccident'])
 
             ]
@@ -33,17 +35,16 @@ class Trainer:
         smote = SMOTE(sampling_strategy=1.0)
 
         model_map = {
-            "RandomforestClassifier":RandomForestClassifier,
-            'DecisonTreeClassifier':DecisionTreeClassifier,
-            'GradientBoostingClassifer':GradientBoostingClassifier
+            'RandomForestClassifier': RandomForestClassifier,
+            'DecisionTreeClassifier': DecisionTreeClassifier,
+            'GradientBoostingClassifier': GradientBoostingClassifier
         }
-
         model_class = model_map[self.model_name]
         model = model_class(**self.model_params)
 
-        pipeline = pipeline([
-            ('preprocessor',preprocessor)
-            ('smote',smote)
+        pipeline = Pipeline([
+            ('preprocessor',preprocessor),
+            ('smote',smote),
             ('model',model)
         ])
 
