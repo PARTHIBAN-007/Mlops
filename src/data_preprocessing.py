@@ -10,7 +10,8 @@ class Cleaner:
         data.drop(['id','SalesChannelID','VehicleAge','DaysSinceCreated'], axis=1, inplace=True)
         
         data['AnnualPremium'] = data['AnnualPremium'].str.replace('£', '').str.replace(',', '').astype(float)
-            
+        data = data[data['Result'].isnull()!=True]
+
         for col in ['Gender', 'RegionID']:
              data[col] = self.imputer.fit_transform(data[[col]]).flatten()
              
@@ -24,5 +25,4 @@ class Cleaner:
         IQR = Q3 - Q1
         upper_bound = Q3 + 1.5 * IQR
         data = data[data['AnnualPremium'] <= upper_bound]
-        
         return data

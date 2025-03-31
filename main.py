@@ -2,10 +2,10 @@ import logging
 import yaml
 import mlflow
 import mlflow.sklearn
-from steps.data_ingestion import Ingestion
-from steps.data_preprocessing import Cleaner
-from steps.data_train import Trainer
-from steps.data_train import Predictor
+from src.data_ingestion import Ingestion
+from src.data_preprocessing import Cleaner
+from src.data_train import Trainer
+from src.data_predict import Predictor
 from sklearn.metrics import classification_report
 
 logging.basicConfig(level=logging.INFO,format='%(asctime)s:%(levelname)s:%(message)s')
@@ -67,7 +67,7 @@ def train_with_mlflow():
         report = classification_report(y_test, trainer.pipeline.predict(X_test), output_dict=True)
         logging.info("Model evaluation completed successfully")
         
-        mlflow.set_tag('Model developer', 'prsdm')
+        mlflow.set_tag('Model developer', 'Parthiban K')
         mlflow.set_tag('preprocessing', 'OneHotEncoder, Standard Scaler, and MinMax Scaler')
         
         model_params = config['model']['params']
