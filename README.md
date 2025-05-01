@@ -53,7 +53,7 @@ mlflow ui
 ```
 4. Start FastAPI server
 ```
-python app.py
+uvicorn app:app.py
 ```
 5. Run Streamlit UI
 ```
